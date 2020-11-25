@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>co.com.periferia.commons</groupId>
+	<artifactId>periferia-commons</artifactId>
+	<version>0.0.17-SNAPSHOT</version>
+	<name>periferia-commons</name>
+	<description>Commons de periferia</description>
+
+	<properties>
+		<java.version>11</java.version>
+	</properties>
+
+	<dependencies>
+	
+	<!-- https://mvnrepository.com/artifact/com.amazonaws/aws-java-sdk-secretsmanager -->
+<dependency>
+    <groupId>com.amazonaws</groupId>
+    <artifactId>aws-java-sdk-secretsmanager</artifactId>
+    <version>1.11.904</version>
+</dependency>
+	
+		
+		<!-- https://mvnrepository.com/artifact/org.python/jython-standalone -->
+		<dependency>
+		    <groupId>org.python</groupId>
+		    <artifactId>jython-standalone</artifactId>
+		    <version>2.7.2</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.bouncycastle/bcprov-jdk15on -->
+		<dependency>
+		    <groupId>org.bouncycastle</groupId>
+		    <artifactId>bcprov-jdk15on</artifactId>
+		    <version>1.66</version>
+		</dependency>
+	
+		<dependency>
+			<groupId>com.amazonaws</groupId>
+			<artifactId>aws-java-sdk-core</artifactId>
+			<version>1.11.882</version>
+		</dependency>
+		<dependency>
+			<groupId>com.amazonaws</groupId>
+			<artifactId>aws-java-sdk-kms</artifactId>
+			<version>1.11.882</version>
+		</dependency>
+		<dependency>
+			<groupId>com.amazonaws</groupId>
+			<artifactId>aws-java-sdk-s3</artifactId>
+			<version>1.11.882</version>
+		</dependency>
+		<dependency>
+			<groupId>com.amazonaws</groupId>
+			<artifactId>aws-java-sdk-sqs</artifactId>
+			<version>1.11.882</version>
+		</dependency>
+		<dependency>
+			<groupId>com.amazonaws</groupId>
+			<artifactId>aws-java-sdk-sts</artifactId>
+			<version>1.11.882</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind -->
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+			<version>2.11.0</version>
+		</dependency>
+
+		<dependency>
+			<groupId>commons-lang</groupId>
+			<artifactId>commons-lang</artifactId>
+			<version>2.6</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-codec</groupId>
+			<artifactId>commons-codec</artifactId>
+			<version>1.9</version><!--$NO-MVN-MAN-VER$ -->
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-log4j12</artifactId>
+			<version>1.7.12</version>
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>servlet-api</artifactId>
+			<version>2.5</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>com.google.code.gson</groupId>
+			<artifactId>gson</artifactId>
+			<version>2.8.6</version>
+		</dependency>
+
+		<dependency>
+			<groupId>commons-lang</groupId>
+			<artifactId>commons-lang</artifactId>
+			<version>2.6</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-codec</groupId>
+			<artifactId>commons-codec</artifactId>
+			<version>1.9</version><!--$NO-MVN-MAN-VER$ -->
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-log4j12</artifactId>
+			<version>1.7.12</version>
+		</dependency>
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-annotations</artifactId>
+			<version>2.9.9</version>
+		</dependency>
+		<dependency>
+			<groupId>javax.validation</groupId>
+			<artifactId>validation-api</artifactId>
+			<version>2.0.1.Final</version>
+		</dependency>
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<version>1.18.8</version>
+			<optional>true</optional>
+		</dependency>
+
+
+<!-- https://mvnrepository.com/artifact/commons-httpclient/commons-httpclient -->
+<dependency>
+    <groupId>commons-httpclient</groupId>
+    <artifactId>commons-httpclient</artifactId>
+    <version>3.1</version>
+</dependency>
+
+	</dependencies>
+
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.8.0</version>
+				<configuration>
+					<release>11</release>
+				</configuration>
+			</plugin>
+			<plugin>
+				<artifactId>maven-source-plugin</artifactId>
+				<version>3.2.0</version>
+				<executions>
+					<execution>
+						<id>attach-sources</id>
+						<phase>deploy</phase>
+						<goals>
+							<goal>jar-no-fork</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<artifactId>maven-deploy-plugin</artifactId>
+				<version>2.8.2</version>
+				<executions>
+					<execution>
+						<id>deploy</id>
+						<phase>deploy</phase>
+						<goals>
+							<goal>deploy</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.sonarsource.scanner.maven</groupId>
+				<artifactId>sonar-maven-plugin</artifactId>
+				<version>3.6.1.1688</version>
+			</plugin>
+		</plugins>
+	</build>
+
+	<distributionManagement> 
+		<snapshotRepository>
+			<id>nexus</id>
+			<name>nexus</name>
+			<url>http://201.184.123.118:8081/repository/maven-snapshots/</url>
+		</snapshotRepository>
+		<repository>
+			<id>goya-releases</id>
+			<name>Internal repository</name>
+			<url>http://201.184.123.118:8081/repository/maven-releases/</url>
+		</repository>
+	</distributionManagement>
+
+
+
+</project>
